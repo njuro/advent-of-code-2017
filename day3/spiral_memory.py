@@ -102,8 +102,8 @@ def spiral_memory(max, adjacent=False):
         return "{} is {} steps from the middle.".format(max, (abs(x) + abs(y)))
 
 
-max_value = 36807800
+max_value = 368078
 # Part 1
 print(spiral_memory(max_value))
 # Part 2
-# print(spiral_memory(max_value, adjacent=True))
+print(spiral_memory(max_value, adjacent=True))
