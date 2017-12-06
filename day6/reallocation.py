@@ -8,11 +8,9 @@ def reallocation():
         banks = list(map(int, input.readline().split()))
         size = len(banks)
         seen = [[]]
-        steps = 0
 
         while banks not in seen:
             seen.append(banks[:])
-            steps += 1
             max_index = banks.index(max(banks))
             max_val = banks[max_index]
             banks[max_index] = 0
@@ -24,6 +22,6 @@ def reallocation():
 
 cycles, last = reallocation()
 # Part 1
-print(len(cycles))
+print(len(cycles) - 1)
 # Part 2
 print(len(cycles) - cycles.index(last))
