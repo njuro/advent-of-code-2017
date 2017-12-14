@@ -3,12 +3,17 @@ https://adventofcode.com/2017/day/10
 '''
 
 
-def knot_hash(total=False):
-    with open("input.txt", 'r') as input:
-        if total:
-            lengths = list(map(ord, [c for c in input.read()])) + [17, 31, 73, 47, 23]
-        else:
-            lengths = list(map(int, input.readline().split(",")))
+def knot_hash(input_str=None, total=False):
+    if input_str:
+        # takes input from string
+        lengths = list(map(ord, [c for c in input_str])) + [17, 31, 73, 47, 23]
+    else:
+        with open("input.txt", 'r') as input:
+            # takes input from file
+            if total:
+                lengths = list(map(ord, [c for c in input.read()])) + [17, 31, 73, 47, 23]
+            else:
+                lengths = list(map(int, input.readline().split(",")))
 
     size = 256
     values = [i for i in range(size)]
@@ -38,8 +43,9 @@ def knot_hash(total=False):
     return dense
 
 
-# Part 1
-print(knot_hash())
+if __name__ == "__main__":
+    # Part 1
+    print(knot_hash())
 
-# Part 2
-print(knot_hash(total=True))
+    # Part 2
+    print(knot_hash(total=True))
