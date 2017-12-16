@@ -10,7 +10,7 @@ def promenade(full_dance=False):
 
     # Calculate the length of cycle
     cycle = 0
-    while full_dance and True:
+    while full_dance:
         cycle += 1
         copy = perform_dance(copy, moves)
         if copy == programs:
